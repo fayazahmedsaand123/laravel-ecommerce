@@ -1,0 +1,508 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* ---------------- Navbar ---------------- */
+/* ---------------- Navbar ---------------- */
+/* ---------------- Navbar ---------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    padding: 0 30px; /* Adjusted padding */
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
+}
+
+/* Group profile and logout button together */
+.user-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between Profile and Logout */
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Subtle background */
+    padding: 5px 12px;
+    border-radius: 50px;
+}
+
+.user-profile img {
+    width: 50px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Logout Button Design */
+.logout-btn {
+    background-color: #e74c3c;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-left: 0 !important; /* Reset margin */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+    text-decoration: none !important;
+    transform: translateY(-2px);
+}
+
+.auth-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+/* ---------------- Dashboard Layout ---------------- */
+.dashboard-container {
+    display: flex;
+    min-height: calc(100vh - 60px); /* account for navbar height */
+}
+
+/* ---------------- Sidebar ---------------- */
+/* ---------------- Sidebar ---------------- */
+.sidebar {
+    width: 200px;
+    background-color: #343a40;
+    color: white;
+    padding-top: 20px;
+    height: 1500px; /* fixed height */
+    position: fixed; /* fixed to left */
+    top: 60px; /* below navbar */
+    left: 0;
+    overflow-y: auto; /* scroll if content is long */
+    z-index: 999;
+}
+
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px  ;
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: left;
+}
+
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+    background-color: #007bff;
+}
+
+/* ---------------- Main Content ---------------- */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    margin-left: 200px; /* width of sidebar */
+    margin-top: 60px;   /* height of navbar */
+    overflow-x: auto;
+}
+
+
+/* Heading */
+.main-content h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+/* ---------------- Success Message ---------------- */
+.success-message {
+    text-align: center;
+    color: #155724;
+    background-color: #d4edda;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* ---------------- Table Styles ---------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    border: none;
+    padding: 20px;
+    text-align: center;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #e9f2ff;
+}
+
+table td {
+    padding: 40px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Product Image */
+.product-img {
+    width: 120px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.img-thumbnail {
+    width: 120px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    display: none;
+}
+/* ---------------- Form Styles ---------------- */
+.main-container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    max-width: 1000px;
+    
+}
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input[type="text"], input[type="number"], textarea, input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.img-thumbnail {
+    display: none;
+    margin: 10px 0;
+    max-height: 200px;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background: #9b59b6;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+button[type="submit"]:hover {
+    background: #8e44ad;
+}
+
+/* ========================= View Button ================================= */
+.btn-view {
+    background: #0ea5e9;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+/* ======================== View Hover Effect ============================ */
+.btn-view:hover {
+    background: #0284c7;
+}
+/* ============================= Update Button ============================== */
+.btn-edit {
+    background-color: #27ae60;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+/* ============================= Update Button Hover Effect ===================== */
+.btn-edit:hover {
+    background-color: #1e8c4a;
+    transform: scale(1.05);
+}
+/* ============================= Delete Button ================================== */
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+/* ============================= Delete Button Hover Effect ========================= */
+.btn-delete:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* ===== View Product Card ===== */
+.view-card {
+    background: #ffffff;
+    padding: 30px;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title */
+.view-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Image */
+.view-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 4px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* Product Name */
+.product-name {
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* Product Info */H
+.product-info {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #0d6efd;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #084298;
+}
+
+.error {
+    color: #e74c3c;
+    text-align: left;
+}
+
+/* Logout button style */
+.logout {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #e74c3c;  /* Red background */
+    color: #fff;                /* White text */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    
+}
+
+.logout i {
+    margin-right: 5px; /* space between icon and text */
+}
+
+/* Hover effect */
+.logout:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    color: #fff;
+}
+/* ============================ Pagination Container ======================================== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 8px;
+}
+/* ============================ Pagination Links and page numbers ================================== */
+.pagination a, .pagination span {
+    display: block;
+    padding: 6px 12px;
+    background: #0d6efd;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+/* ============================== Pagination Hover Effect ================== */
+.pagination a:hover {
+    background: #084298;
+}
+/* =========================== Active page indicator ====================== */
+.pagination .active {
+    background: #0dcaf0;
+    color: #003b75;
+}
+/* ============================= Pagination Left ================================= */
+.pagination-left {
+    display: flex;
+    justify-content: flex-start; /* left-aligned */
+    margin-left: 30px;
+}
+
+
+/* ---------------- Footer ---------------- */
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    height: 80px;
+    margin-top: 300px;
+    
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+     .sidebar {
+        width: 100%;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .main-content {
+        margin-left: 0; /* remove sidebar space */
+        margin-top: 120px; /* navbar + sidebar height */
+    }
+
+    .sidebar ul {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 0;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: calc(50% - 20px);
+        text-align: left;
+        font-weight: bold;
+        color: #555;
+    }
+
+    .product-img {
+        width: 50px;
+        height: 50px;
+    }
+}

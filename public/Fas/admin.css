@@ -1,0 +1,314 @@
+/* ================== GLOBAL ================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================== NAVBAR ================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #212529;
+    padding: 0 25px;
+    color: #fff;
+    z-index: 1000;
+}
+
+.navbar h2 {
+    font-size: 22px;
+}
+
+.navbar-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.logout {
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.logout:hover {
+    background-color: #c0392b;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.admin-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* ================== LAYOUT ================== */
+.dashboard-container {
+    display: flex;
+    margin-top: 60px;
+}
+
+/* ================== SIDEBAR ================== */
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 230px;
+    height: 1800px; /* fixed height */
+    background: #343a40;
+    padding-top: 20px;
+    overflow-y: auto;
+    z-index: 999;
+
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background: #495057;
+    border-left: 4px solid #0d6efd;
+}
+
+/* ================== MAIN CONTENT ================== */
+.main-content {
+    margin-left: 260px;
+    padding: 30px;
+    margin: 0 auto;
+    min-height: calc(100vh - 60px);
+}
+.main-content h1 {
+    margin-bottom: 15px;
+}
+.main-content h2 {
+    background: linear-gradient(135deg, #0d6efd, #084298);
+    color: #fff;
+    padding: 14px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    margin-left: 0px;
+}
+/* ================== BADGES ================== */
+.role-admin { color: #0d6efd; font-weight: bold; }
+.role-seller { color: #198754; font-weight: bold; }
+
+.status-active { color: #198754; font-weight: bold; }
+.status-disabled { color: #dc3545; font-weight: bold; }
+
+/* ================== BUTTONS ================== */
+.btn-admin,
+.btn-enable,
+.btn-disable {
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.btn-admin { background: #0d6efd; }
+.btn-enable { background: #198754; }
+.btn-disable { background: #dc3545; }
+
+/* ================== TABLE ================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+thead {
+    background: #212529;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+thead th,
+tbody td {
+    padding: 12px;
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background-color: #f1f5ff;
+}
+/* ============================= Delete Button ================================== */
+.delete-customer {
+    background-color: #e74c3c;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+/* ============================= Delete Button Hover Effect ========================= */
+.delete-customer:hover {
+    background-color: #c0392b;
+    color: whitesmoke;
+    transform: scale(1.15);
+}
+/* ================== VIEW BUTTON ================== */
+.btn-view {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: #0d6efd;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-view:hover {
+    background-color: #084298;
+    color: #ffffff;
+}
+/* Product Image */
+.product-img {
+    width: 80px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* ================== CONFIRM ORDER FORM ================== */
+.form-container {
+    max-width: 520px;
+    margin: 120px auto;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-top: 6px solid #198754;
+}
+
+.form-container h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #198754;
+    font-weight: bold;
+}
+
+/* Inputs */
+.form-group {
+    margin-bottom: 15px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #198754;
+    outline: none;
+    box-shadow: 0 0 0 0.15rem rgba(25, 135, 84, 0.25);
+}
+
+/* Textarea */
+textarea {
+    resize: none;
+    height: 90px;
+}
+
+/* Button */
+.form-group button {
+    width: 100%;
+    padding: 12px;
+    background: #198754;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.form-group button:hover {
+    background: #146c43;
+}
+
+.card {
+    border-radius: 15px;
+    transition: 0.3s;
+    margin-left: 60px;
+    height: 300px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* ================= Errors ==================== */
+.error {
+    color: #dc3545;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.error:hover {
+    transform: scale(1.1);
+    color: #ff0000;
+}
+
+/* ================== FOOTER ================== */
+.footer {
+    margin-left: 230px;
+    background: #212529;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    margin-top: 300px;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        display: block;
+        margin-bottom: 15px;
+    }
+}

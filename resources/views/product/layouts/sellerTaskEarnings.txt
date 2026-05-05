@@ -1,0 +1,36 @@
+**Assignment: Seller Earnings & Sold Products Notification System**
+
+**Task Description:**
+
+You need to implement a feature in the project with the following requirements:
+
+1. **Product Selling Flow**
+
+   * A seller adds products for sale.
+   * These products are displayed in the customer panel/table.
+   * A customer can purchase and confirm an order.
+
+2. **Seller Notification**
+
+   * When a customer buys a product, the product owner (seller) must be notified that:
+
+     > “Your product has been sold.”
+
+3. **Earnings Section for Seller**
+
+   * After login, each seller must have a new menu option called **“Earnings.”**
+   * In this section, the seller should see:
+
+     * List of their sold products only
+     * Customer name who bought the product
+     * Quantity sold`
+     * Date and time of purchase
+     * Total earnings from each sale
+
+4. **Important Rules**
+
+   * Each seller can see **only their own sold products and earnings.**
+   * Sellers must NOT see other sellers’ sales data.
+
+**Goal:**
+Create a complete system where sellers can track their product sales and earnings after customers place confirmed orders.
