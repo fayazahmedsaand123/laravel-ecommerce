@@ -46,7 +46,7 @@
                                 {{-- Product Image --}}
                                 <td>
                                     @if($item->product)
-                                        <img src="{{ asset('product_image/'. $item->product->image) }}" width="50" class="me-2">
+                                        <img src="{{ asset('images/'. $item->product->image) }}" width="50" class="me-2">
                                     @else
                                         <span class="text-muted">Deleted Product</span>
                                     @endif
