@@ -78,7 +78,7 @@ class OrderController extends Controller {
 
             // If the product exists and has a seller, use it. 
             // Otherwise, you might want to assign a default or throw an error.
-            $sellerId = $product ? $product->seller_id : null;
+            $sellerId = $product ? $product->user_id : null;
 
             OrderItem::create([
                 'order_id'   => $order->id,

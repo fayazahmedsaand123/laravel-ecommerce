@@ -12,9 +12,11 @@ class CardProduct extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'name',
         'price',
         'image',
+        'description'
     ];
 
     // Relationship with seller (User)
